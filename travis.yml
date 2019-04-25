@@ -1,0 +1,9 @@
+sudo: required
+services:
+   - docker
+
+before_install:
+   - docker build -t ikb4r/docker-react -f Dockerfile.dev .
+
+script:
+   - docker run ikb4r/docker-react npm run test -- --coverage
