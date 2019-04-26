@@ -7,3 +7,11 @@ before_install:
 
 script:
    - docker run ikb4r/docker-react npm run test -- --coverage
+
+deploy:
+   provider: elasticbeanstalk
+   region: "us-east-1"
+   app: "docker-react"
+   env: "DockerReact-env"
+   bucket_name: "elasticbeanstalk-us-east-1-284453997941"
+   bucket-path: "docker-react"
